@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+.bgColorRed
+{
+background-color: rgba(249, 8, 8, 0.904);
+}
+
+.bgColorGray
+{
+    background-color: gray;
+}
+
+
+.bgColorGreen
+{
+background-color: rgba(8, 249, 20, 0.74);
+}
+
+.bgColorYellow
+{
+background-color: rgb(191, 194, 29);
+}
+
+
+body
+{
+    background-image: url("../images/joshua-bartell-6vvIBTvL90A-unsplash.jpg");
+    background-size: cover;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold !important;
+}
+
+
+.white
+{
+    color: white;
+}

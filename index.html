@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Task Tracker</title>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="row">
+            <h2 class="text-center mt-4 white">Task Tracker</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+
+                 <!-- Button trigger modal -->
+                 <div class="d-flex justify-content-center mt-4">
+                    <button type="button" class="btn btn-warning" data-bs-toggle="modal"
+                        data-bs-target="#Mo">
+                        Add A Task
+                    </button>
+                </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="Mo" tabindex="-1" aria-labelledby="exMoLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="MoLabel">Task Info</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body p-0">
+                                    <div class="row mx-5">
+                                        <div class="col-12 mx-5">
+                                            <label for="name">Name:</label>
+                                            <input type="text" id="name" name="name" size="25">
+                                        </div>
+                                    </div>
+                                    <div class="row mx-5">
+                                        <div class="col-12 mx-2">
+                                            <label for="description">Description:</label>
+                                            <input type="text" id="description" name="fname" size="25">
+                                        </div>
+                                    </div>
+                                    <div class="row mx-2">
+                                        <div class="col-3 p-0">
+                                            <label for="priority" class="mt-2 mx-5">Priority:</label>
+                                        </div>
+                                        <div class="col-8 mx-3">
+                                                <select id= "priority" class="form-select" aria-label="Default select example" width="20px">
+                                                <option selected> Select a Priority</option>
+                                                <option value="Low">Low</option>
+                                                <option value="Medium">Medium</option>
+                                                <option value="High">High</option>
+                                              </select>
+                                        </div>
+                                    </div>
+                                    <div class="row mx-4">
+                                        <div class="col-12 mx-5">
+                                            <label for="dueDates">Due Date:</label>
+                                            <input type="date" id="dueDate" name="dueDates">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button id = "saveBtn" type="button" class="btn btn-primary">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+
+        <div class="row text-center mt-5">
+            <div class="col-4 white">
+              <h2>To-Do</h2>  
+            </div>
+            <div class="col-4 white">
+               <h2>In-progress</h2>
+            </div>
+            <div class="col-4 white">
+             <h2>Completed</h2> 
+            </div>
+        </div>
+
+
+        <div id ="injectElement">
+
+        <!-- <div class="row" id="divRow">
+            <div class="col-12 d-flex justify-content-start">
+                <div class="card bgColorRed" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Card Title</h5>
+                        <div class = "d-flex justify-content-center">
+                      
+
+
+
+
+                 <div class="d-flex justify-content-center mt-4">
+                    <button id= "editBtn" type="button" class="btn btn-warning" data-bs-toggle="modal"
+                        data-bs-target="#Modal">
+                        Edit Task
+                    </button>
+                </div>
+
+
+
+
+                
+                 <div class="d-flex justify-content-center mt-4 mx-2">
+                
+                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                     View Task
+                    </button>
+                    
+
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+
+                        <div class="modal-content">
+
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Task Description</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+
+                          <div class="modal-body">
+                            
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <p>Task Description is Found here</p>
+                                </div>
+                            </div>
+
+                          </div>
+
+
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Understood</button>
+                          </div>
+
+
+
+                        </div>
+
+                      </div>
+                    </div>
+
+
+                </div>
+
+
+
+
+
+                    <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="ModalLabel">Task Info</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+
+
+
+                                <div class="modal-body p-0">
+
+                                    <div class="row mx-5">
+                                        <div class="col-12 mx-5">
+                                            <label for="fname">Name:</label>
+                                            <input type="text" id="fname" name="fname" size="25">
+                                        </div>
+                                    </div>
+
+                                    <div class="row mx-5">
+                                        <div class="col-12 mx-2">
+                                            <label for="fname">Description:</label>
+                                            <input type="text" id="fname" name="fname" size="25">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row mx-2">
+                                        <div class="col-3 p-0">
+                                            <label for="fname" class="mt-2 mx-5">Priority:</label>
+                                        </div>
+                                        <div class="col-8 mx-3">
+                                                <select class="form-select" aria-label="Default select example" width="20px">
+                                                <option selected> Select a Priority</option>
+                                                <option value="Low">Low</option>
+                                                <option value="Medium">Medium</option>
+                                                <option value="High">High</option>
+                                              </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mx-2">
+                                        <div class="col-3 p-0">
+                                            <label for="fname" class="mt-2 mx-5">Status:</label>
+                                        </div>
+                                        <div class="col-8 mx-3">
+                                                <select id = "statusChange" class="form-select" aria-label="Default select example" width="20px">
+                                                <option selected> Select a Status</option>
+                                                <option value="ToDo">To-Do</option>
+                                                <option value="InProgress">In-progress</option>
+                                                <option value="Completed">Completed</option>
+                                              </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mx-4">
+                                        <div class="col-12 mx-5">
+                                            <label for="">Due Date:</label>
+                                            <input type="date" id="" name="">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"data-bs-dismiss="modal">Close</button>
+                                    <button id = "button7" type="button" class="btn btn-danger">Remove Task</button>
+                                    <button type="button" class="btn btn-primary">Save</button>
+                                </div>
+                                
+                            </div>
+
+                        </div>
+
+                    </div>
+                    </div>
+
+
+
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+    </div> -->
+
+    </div>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="./scripts/app.js" type="module"></script>
+</body>
+
+</html>
